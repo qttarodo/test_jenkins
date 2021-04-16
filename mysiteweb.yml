@@ -1,5 +1,4 @@
 ---
-
 - hosts: LOCALSERVER
   become: true
   vars:
@@ -9,7 +8,7 @@
     - name: Build Image
       docker_image:
         build:
-          path: /usr/share/nginx/html
+          path: "{{ pathbuild }}"
           pull: yes
         name: "{{ image_name }}"
         tag: "{{ image_tag }}"
